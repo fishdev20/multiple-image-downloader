@@ -1,3 +1,4 @@
+// eslint-disable-next-line prettier/prettier
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -15,6 +16,7 @@ const config: Config = {
       },
     },
   },
+  darkMode: "class",
   plugins: [],
 };
 export default config;
