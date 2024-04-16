@@ -7,10 +7,7 @@ on:
     branches:
       - main
   pull_request:
-      branches: 
-        - main
-      types: 
-        - merged
+      types: [closed]
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
