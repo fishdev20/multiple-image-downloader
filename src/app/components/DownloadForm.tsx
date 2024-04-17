@@ -31,7 +31,7 @@ export default function DownloadForm() {
     resolver: zodResolver(FormSchema),
   });
 
-  const handleTextareaChange = (e) => {
+  const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextareaValue(e.target.value);
   };
 
