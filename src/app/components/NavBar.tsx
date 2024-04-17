@@ -22,8 +22,8 @@ export default function NavBar() {
       <ul
         className={
           nav
-            ? 'fixed left-0 top-0 h-full w-[60%] border-r bg-white shadow-lg duration-500 ease-in-out dark:bg-gray-800 md:hidden'
-            : 'fixed bottom-0 left-[-100%] top-0 h-full w-[60%] border-r bg-white shadow-lg duration-500 ease-in-out dark:bg-gray-900'
+            ? 'fixed left-0 top-0 h-full w-[40%] border-r bg-white shadow-lg duration-500 ease-in-out dark:bg-gray-800 md:hidden'
+            : 'fixed bottom-0 left-[-100%] top-0 h-full w-[40%] border-r bg-white shadow-lg duration-500 ease-in-out dark:bg-gray-900'
         }
       >
         {/* Mobile Logo */}
@@ -64,7 +64,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="sticky top-0 z-[60] mx-auto flex w-full items-center justify-between border-b border-gray-200 bg-white px-4 py-2.5 text-gray-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
+    <nav className="sticky top-0 z-[60] mx-auto flex w-full items-center justify-between border-b border-gray-200 bg-white px-4 py-2.5 text-gray-500 shadow-lg duration-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
       <h1 className=" flex w-full items-center text-3xl font-bold text-gray-900 dark:text-gray-200">
         IMAGE{' '}
         <span>
@@ -75,11 +75,12 @@ export default function NavBar() {
       {/* Mobile Navigation Icon */}
       <div className="block flex items-center justify-between gap-4 md:hidden">
         <ThemeSwitch />
-        {nav ? (
-          <AiOutlineClose size={20} onClick={handleNav} />
-        ) : (
-          <AiOutlineMenu size={20} onClick={handleNav} />
-        )}
+        <button
+          onClick={handleNav}
+          className="mr-2 cursor-pointer rounded p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:bg-gray-700 dark:focus:ring-gray-700 lg:hidden"
+        >
+          {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+        </button>
       </div>
       {renderMobileNav()}
     </nav>
